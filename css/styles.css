@@ -1,0 +1,41 @@
+body, td, th {
+	font-family: Arial,Liberation Sans,DejaVu Sans,sans-serif;
+	font-size: 14px;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}s
+
+img {
+    border: 0px;
+}
+
+.tr_odd {
+	background: #e7ecee;
+}
+
+.tr_odd td {	
+	box-shadow: 1px 2px 1px #ccc;
+}
+
+td,th {
+	text-align:center;
+	margin:0px;
+	padding: 5px;
+}
+
+table.criteria td {	
+	vertical-align:top;
+	text-align:left;
+}
+
+
+table.plans th {
+	background: #005892;
+	color:#FFF;
+	border-bottom: 3px solid #495961;
+	
+	border-right: 3px solid #FFF;
+}

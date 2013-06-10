@@ -1,0 +1,74 @@
+<html ng-app>
+<head>
+	<title>Montr&eacute;al ISP Comparison</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<script src="js/angular.min.js"></script>
+	<script src="js/controller.js"></script>
+
+</head>
+<body ng-controller="PlanListCtrl">
+ <center>
+  <h1>Montr&eacute;al ISP Comparison</h1>
+
+ 	<form name="criteria" novalidate>
+ 	<fieldset>
+	 	<legend>Selection criterias</legend>
+	 	
+	 	<center>
+ 	<table class="criteria">
+		<tr><td>
+	 		<b>Minimum requierments</b><br/>
+	 		Download speed (Mbps) : <input type="number" ng-model="min_down_speed" name="min_down_speed" min="0" max="100" value="0" integer /><br/>
+	 		Bandwith (GB) : <input type="number" ng-model="min_download_limit" name="min_download_limit" min="0" max="100" value="0" integer />
+	 		</fieldset>
+ 		
+ 		</td>
+ 		<td>
+ 		
+	 		<b>Budget</b><br/>
+	 		Maximum montly fee ($/month) : <input type="number" ng-model="montly_fee" name="montly_fee" min="0" max="200" integer /><br/>
+	 		
+	 		</fieldset>
+ 		</td>
+ 		<td>
+	 		<b>Order by:</b><br/>
+	 		
+	 		<input type="radio" ng-model="sort" id="price" value="price" ng-click="predicate = ['i_price','down_speed','limit'];" ng-checked="true">
+	 		<label for="price">Lowest price</label><br/>
+	 		
+	      	<input type="radio" ng-model="sort" id="price" value="limit" ng-click="predicate = ['limit','i_price','down_speed'];">
+	      	Highest bandwith limit<br/>
+	      	
+	      	<input type="radio" ng-model="sort" id="price" value="down_speed" ng-click="predicate = ['down_speed','i_price','limit'];">
+	      	Fastest speed<br/>
+	 		
+ 		</td></tr>
+ 	</table>
+ 	</center>
+ 	</fieldset>
+ 	
+ 	</form>
+  
+  <table class='plans'>
+  	<th>Plan Name</th> <th>Download</th> <th>Upload</th> <th>Bandwith limit</th> <th>Monthly fee</th> <th></th>
+  	
+    <tr ng-repeat="plan in plans | filter:criteriaMatch(criteria) | orderBy:predicate:true"  ng-class-odd="'tr_odd'">
+      <td>{{plan.isp}} {{plan.name}}</td>
+      <td>{{plan.down_speed}}</td>
+      <td>{{plan.up_speed}}</td>
+      <td>{{(plan.limit == null) && '&#8734;' || plan.limit}}</td>
+      <td>{{plan.price}}</td>
+      <td><a href="{{plan.link}}" target="_blank">More details</a></td>
+    </tr>
+  </table>
+  </center>
+  
+  <!--
+  Other resources:
+  http://www.dslreports.com/gbu/
+  -->
+  
+</body>
+</html>
