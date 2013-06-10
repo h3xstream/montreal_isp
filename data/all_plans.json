@@ -26,10 +26,9 @@
   ["TekSavy","Cable 60"   , 60 , 10  , 75   , 54.95, "http://teksavvy.com/fr/residential/internet/cable/cable-60-2"],
   ["TekSavy","Cable 60"   , 60 , 10  , 300  , 79.95, "http://teksavvy.com/fr/residential/internet/cable/cable-60-2"],
   ["TekSavy","Cable 60"   , 60 , 10  , null ,134.95, "http://teksavvy.com/fr/residential/internet/cable/cable-60-2"],
-  
   ["TekSavy","Cable 120"  , 120, 20  , 75   , 79.95, "http://teksavvy.com/fr/residential/internet/cable/cable-120"],
   ["TekSavy","Cable 120"  , 120, 20  , 300  , 124.95, "http://teksavvy.com/fr/residential/internet/cable/cable-120"],
-  ["TekSavy","Cable 120"  , 120, 20  , null , 229,95, "http://teksavvy.com/fr/residential/internet/cable/cable-120"],
+  ["TekSavy","Cable 120"  , 120, 20  , null , 229.95, "http://teksavvy.com/fr/residential/internet/cable/cable-120"],
 
   ["RadioActif","Internet 56K Commut\u00E9"  , 0.056  , 0.056 , null, 8.95,  "http://www.radioactif.com/forfaits_internet/forfaits-internet-avantages_DU.php"],
   ["RadioActif","ADSL 2"  , 2  , 0.8 , null, 28.5,  "http://www.radioactif.com/forfaits_internet/forfaits-internet-avantages_ADSL.php"],
