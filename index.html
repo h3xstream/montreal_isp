@@ -52,10 +52,11 @@
  	</form>
   
   <table class='plans'>
-  	<th>Plan Name</th> <th>Download</th> <th>Upload</th> <th>Bandwith limit</th> <th>Monthly fee</th> <th></th>
+  	<th></th> <th>Plan Name</th> <th>Download</th> <th>Upload</th> <th>Bandwith limit</th> <th>Monthly fee</th> <th></th>
   	
     <tr ng-repeat="plan in plans | filter:criteriaMatch(criteria) | orderBy:predicate:true"  ng-class-odd="'tr_odd'">
-      <td>{{plan.isp}} {{plan.name}}</td>
+      <td><img src="{{plan.icon}}" height="16" width="16"/></td>
+      <td style="text-align:left">{{plan.isp}} {{plan.name}}</td>
       <td>{{plan.down_speed}}</td>
       <td>{{plan.up_speed}}</td>
       <td>{{(plan.limit == null) && '&#8734;' || plan.limit}}</td>

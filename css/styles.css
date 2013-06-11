@@ -36,6 +36,7 @@ table.plans th {
 	background: #005892;
 	color:#FFF;
 	border-bottom: 3px solid #495961;
-	
-	border-right: 3px solid #FFF;
+	padding:10px;
+	padding-left:16px;
+	padding-right:16px;
 }

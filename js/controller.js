@@ -11,7 +11,8 @@
 	  	"limit":bandwithLimit,
 	  	"price":price,
 	  	"i_price":1/price, //Hack needed for multi-column sort
-	  	"link":link});
+	  	"link":link,
+	  	"icon":"images/"+isp.toLowerCase().replace("\u00E9","e")+"_favicon.png"});
   }
   
   //
