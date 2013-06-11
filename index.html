@@ -2,6 +2,7 @@
 <head>
 	<title>Montreal ISP Comparison</title>
 	
+	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 
 	<script src="js/angular.min.js"></script>
@@ -52,7 +53,13 @@
  	</form>
   
   <table class='plans'>
-  	<th></th> <th>Plan Name</th> <th>Download</th> <th>Upload</th> <th>Bandwith limit</th> <th>Monthly fee</th> <th></th>
+  	<th></th>
+  	<th>Plan Name</th>
+  	<th>Download<br/><small>(Mbps)</small></th>
+  	<th>Upload<br/><small>(Mbps)</small></th>
+  	<th>Bandwith limit<br/><small>(GB/month)</small></th>
+  	<th>Monthly fee<br/><small>($/month)</small></th>
+  	<th></th>
   	
     <tr ng-repeat="plan in plans | filter:criteriaMatch(criteria) | orderBy:predicate:true"  ng-class-odd="'tr_odd'">
       <td><img src="{{plan.icon}}" height="16" width="16"/></td>
@@ -63,8 +70,16 @@
       <td>{{plan.price}}</td>
       <td><a href="{{plan.link}}" target="_blank">More details</a></td>
     </tr>
+    
+    <tr ng-hide="(plans | filter:criteriaMatch(criteria)).length">
+    	<td colspan="7">
+    		<h3>No plan found. :(<br/>Not all filter need to be filled</h3>
+    	</td>
+    </tr>
   </table>
   </center>
+  
+  <a href="https://github.com/h3xstream/montreal_isp"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
   
   <!--
   Other resources:
