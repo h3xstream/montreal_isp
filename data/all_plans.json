@@ -7,6 +7,8 @@
   ["TekSavy","DSL 7"      , 7  , 1   , null , 39.99, "http://teksavvy.com/en/residential/internet/dsl/high-speed-dsl-7---qc"],
   ["TekSavy","DSL 10"     , 10 , 1   , 300  , 39.99, "http://teksavvy.com/en/residential/internet/dsl/high-speed-dsl-10---qc"],
   ["TekSavy","DSL 10"     , 10 , 1   , null , 51.99, "http://teksavvy.com/en/residential/internet/dsl/high-speed-dsl-10---qc"],
+  ["TekSavy","DSL 15"     , 15 , 1   , 300  , 39.99, "http://teksavvy.com/en/residential/internet/dsl/high-speed-dsl-15---qc"],
+  ["TekSavy","DSL 15"     , 15 , 1   , null , 54.99, "http://teksavvy.com/en/residential/internet/dsl/high-speed-dsl-15---qc"],
   ["TekSavy","DSL 15/10"  , 15 , 10  , 300  , 41.99, "http://teksavvy.com/fr/residential/internet/dsl/high-speed-dsl-15-10---qc"],
   ["TekSavy","DSL 15/10"  , 15 , 10  , null , 56.99, "http://teksavvy.com/fr/residential/internet/dsl/high-speed-dsl-15-10---qc"],
   ["TekSavy","DSL 25"     , 25 , 10  , 300  , 44.99, "http://teksavvy.com/fr/residential/internet/dsl/high-speed-dsl-25---qc"],
