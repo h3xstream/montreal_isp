@@ -1,10 +1,12 @@
-<html ng-app>
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="">
 <head>
 	<title>Montreal ISP Comparison</title>
 	
 	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 
+	<!--[if lte IE 8]> <script src="js/json2.js"></script> <![endif]-->
 	<script src="js/angular.min.js"></script>
 	<script src="js/controller.js"></script>
 
@@ -23,27 +25,26 @@
 	 		<b>Minimum requirements</b><br/>
 	 		Download speed (Mbps) : <input type="number" ng-model="min_down_speed" name="min_down_speed" min="0" max="100" value="0" integer /><br/>
 	 		Bandwidth (GB) : <input type="number" ng-model="min_download_limit" name="min_download_limit" min="0" max="100" value="0" integer />
-	 		</fieldset>
+	 		
  		
  		</td>
  		<td>
  		
 	 		<b>Budget</b><br/>
-	 		Maximum montly fee ($/month) : <input type="number" ng-model="montly_fee" name="montly_fee" min="0" max="200" integer /><br/>
+	 		Maximum monthly fee ($/month) : <input type="number" ng-model="montly_fee" name="montly_fee" min="0" max="200" integer /><br/>
 	 		
-	 		</fieldset>
  		</td>
  		<td>
 	 		<b>Order by:</b><br/>
 	 		
-	 		<input type="radio" ng-model="sort" id="price" value="price" ng-click="predicate = ['i_price','down_speed','limit'];" ng-checked="true">
-	 		<label for="price">Lowest price</label><br/>
+	 		<input type="radio" ng-model="sort" name="order_by" id="order_by_price" value="order_by_price" ng-click="predicate = ['i_price','down_speed','limit'];" ng-checked="true">
+	 		<label for="order_by_price">Lowest price</label><br/>
 	 		
-	      	<input type="radio" ng-model="sort" id="price" value="limit" ng-click="predicate = ['limit','i_price','down_speed'];">
-	      	Highest bandwith limit<br/>
+	      	<input type="radio" ng-model="sort" name="order_by" id="order_by_limit" value="order_by_limit" ng-click="predicate = ['limit','i_price','down_speed'];">
+	      	<label for="order_by_limit">Highest bandwidth limit</label><br/>
 	      	
-	      	<input type="radio" ng-model="sort" id="price" value="down_speed" ng-click="predicate = ['down_speed','i_price','limit'];">
-	      	Fastest speed<br/>
+	      	<input type="radio" ng-model="sort" name="order_by" id="order_by_down_speed" value="order_by_down_speed" ng-click="predicate = ['down_speed','i_price','limit'];">
+	      	<label for="order_by_speed">Fastest speed</label><br/>
 	 		
  		</td></tr>
  	</table>
@@ -57,11 +58,11 @@
   	<th>Plan Name</th>
   	<th>Download<br/><small>(Mbps)</small></th>
   	<th>Upload<br/><small>(Mbps)</small></th>
-  	<th>Bandwith limit<br/><small>(GB/month)</small></th>
+  	<th>Bandwidth limit<br/><small>(GB/month)</small></th>
   	<th>Monthly fee<br/><small>($/month)</small></th>
   	<th></th>
   	
-    <tr ng-repeat="plan in plans | filter:criteriaMatch(criteria) | orderBy:predicate:true"  ng-class-odd="'tr_odd'">
+    <tr ng-repeat="plan in plans | filter:criteriaMatch() | orderBy:predicate:true"  ng-class-odd="'tr_odd'">
       <td><img src="{{plan.icon}}" height="16" width="16"/></td>
       <td style="text-align:left">{{plan.isp}} {{plan.name}}</td>
       <td>{{plan.down_speed}}</td>
@@ -71,7 +72,7 @@
       <td><a href="{{plan.link}}" target="_blank">More details</a></td>
     </tr>
     
-    <tr ng-hide="(plans | filter:criteriaMatch(criteria)).length">
+    <tr ng-hide="(plans | filter:criteriaMatch).length">
     	<td colspan="7">
     		<h3>No plan found. :(<br/>Not all filters need to be filled</h3>
     	</td>
