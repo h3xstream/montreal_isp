@@ -13,6 +13,11 @@ h1, h3 {
     text-shadow: 0 1px 2px #666;
 }
 
+.criterion {
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -62,4 +67,18 @@ table.plans th {
 
 .footer a:link, .footer a:visited {
     color: white;
+}
+
+.lang_button {
+    padding:6px;
+}
+
+.social_box {
+    padding:5px;
+    background-color: #FFFFFF;
+    border: 2px solid #CCCCCC;
+    /*Round corner*/
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }

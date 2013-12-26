@@ -35,6 +35,7 @@ app.config(['$translateProvider', function ($translateProvider) {
         'DOLLAR_MONTH': '$/month',
         'GB_MONTH': 'GB/month',
 
+        'SHARE_MSG': 'Share this tool',
         'FOOTNOTES': 'This application was developped by Philippe Arteau using <a href="http://angularjs.org/">AngularJS</a>. ' +
             'It is release under <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons</a>.',
     });
@@ -58,7 +59,7 @@ app.config(['$translateProvider', function ($translateProvider) {
         'FASTEST_SPEED': 'Vitesse la plus rapide',
 
         //Titles column
-        'PLAN_NAME': 'Nom du plan',
+        'PLAN_NAME': 'Nom du forfait',
         'DOWNLOAD': 'T\u00E9l\u00E9chargement',
         'UPLOAD': 'T\u00E9l\u00E9versement',
         'BANDWIDTH_LIMIT': 'Limite de bande passante',
@@ -71,6 +72,7 @@ app.config(['$translateProvider', function ($translateProvider) {
         'DOLLAR_MONTH': '$/mois',
         'GB_MONTH': 'GB/mois',
 
+        'SHARE_MSG': 'Partagez cet outil',
         'FOOTNOTES': 'Cette application a \u00E9t\u00E9 d\u00E9velopp\u00E9e par Philippe Arteau en utilisant <a href="http://angularjs.org/">AngularJS</a>. ' +
             'Elle est publi\u00E9e sous la license <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons</a>.',
     });

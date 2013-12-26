@@ -1,7 +1,7 @@
 <!doctype html>
 <html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="myApp">
 <head>
-	<title>Montreal ISP Comparison</title>
+	<title>Comparatif des FAI &agrave; Montr&eacute;al / Montreal ISP Comparison</title>
 	
 	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -14,17 +14,21 @@
 </head>
 <body ng-controller="PlanListCtrl">
 
+<div id="social" style="position: fixed; top: 0; left: 0; border: 0;z-index:100;padding:5px;">
+<div ng-switch on="isFrench">
+    <button class="lang_button" ng-switch-when='true' ng-click="changeLanguage('en')">{{ 'BTN_CHANGE_LANG_ENG' | translate }}</button>
+    <button class="lang_button" ng-switch-when='false' ng-click="changeLanguage('fr')">{{ 'BTN_CHANGE_LANG_FR' | translate }}</button>
+</div>
+</div>
 
  <center>
- 
 
   <h1>{{ 'TITLE' | translate }}</h1>
-     <div ng-switch on="isFrench">
-     <button ng-switch-when='true' ng-click="changeLanguage('en')">{{ 'BTN_CHANGE_LANG_ENG' | translate }}</button>
-     <button ng-switch-when='false' ng-click="changeLanguage('fr')">{{ 'BTN_CHANGE_LANG_FR' | translate }}</button>
-     </div>
+
+
 
      <form name="criteria" novalidate>
+         <div class="criterion">
  	<fieldset>
 	 	<legend>{{ 'SELECTION_CRITERION' | translate }}</legend>
 	 	
@@ -61,6 +65,7 @@
  	</table>
  	</center>
  	</fieldset>
+             </div>
  	
  	</form>
   <br/>
@@ -89,6 +94,9 @@
     	</td>
     </tr>
   </table>
+
+
+
   </center>
 
 <br/>
@@ -101,10 +109,13 @@
   -->
 
 <!-- Social links -->
-<div id="social" style="position: fixed; bottom: 0; left: 0; border: 0;z-index:100;padding:30px;padding-bottom:100px;">
+<div id="social" style="position: fixed; bottom: 0; left: 0; border: 0;z-index:100;padding:10px;padding-bottom:100px;width:130px;">
+    <div class="social_box">
+    <b>{{ 'SHARE_MSG' | translate }}</b><br/>
     <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a><br/>
     <div class="g-plusone"></div><br/>
     <div class="fb-like" data-href="http://h3xstream.github.com/find-sec-bugs/" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="lucida grande"></div><br/>
+    </div>
 </div>
 
 
