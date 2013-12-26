@@ -3,6 +3,8 @@ body, td, th {
 	font-size: 14px;
 }
 
+body {margin:0px;padding:0px;}
+
 h1,h3 {
 	font-family: 'Titillium Web', sans-serif;
 	text-shadow: 0 1px 2px #666;
@@ -45,3 +47,12 @@ table.plans th {
 	padding-left:16px;
 	padding-right:16px;
 }
+
+.footer {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background-color: #005892;
+    color: white;
+    text-align:center;
+}
+.footer a:link, .footer a:visited {color: white;}
