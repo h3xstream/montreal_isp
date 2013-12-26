@@ -4,10 +4,10 @@ Try the [live version](http://h3xstream.github.io/montreal_isp/) of this applica
 
 ## Contributing
 
-Here are some pointer for contributing:
+Here are some pointers for contributing:
 
- - Fixing typographical error: [js/controller.js](blob/gh-pages/js/controller.js)
- - Updating price/Adding plans: [data/all_plans.json](blob/gh-pages/data/all_plans.json)
+ - Fixing typographical error: [js/controller.js](js/controller.js)
+ - Updating price/Adding plans: [data/all_plans.json](data/all_plans.json)
 
 ## License
 
