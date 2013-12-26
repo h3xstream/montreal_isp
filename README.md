@@ -11,5 +11,5 @@ Here are some pointers for contributing:
 
 ## License
 
-It tool is release under [Creative Commons](http://creativecommons.org/licenses/by/4.0/).
-Feel free to reuse Javascript code or the data sheet from this project.
+This tool is release under [Creative Commons](http://creativecommons.org/licenses/by/4.0/).
+Feel free to reuse the Javascript code or the data sheet from this project.
