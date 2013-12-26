@@ -4,8 +4,8 @@ var app = angular.module('myApp', ['pascalprecht.translate']);
 app.config(['$translateProvider', function ($translateProvider) {
 
     $translateProvider.translations('en', {
-        'BTN_CHANGE_LANG_ENG': 'Switch to English',
-        'BTN_CHANGE_LANG_FR': 'Changer en Fran\u00E7ais',
+        'BTN_CHANGE_LANG_ENG': 'English version',
+        'BTN_CHANGE_LANG_FR': 'Version fran\u00E7aise',
 
         'TITLE': 'Montreal ISP Comparison',
 
@@ -40,8 +40,8 @@ app.config(['$translateProvider', function ($translateProvider) {
     });
 
     $translateProvider.translations('fr', {
-        'BTN_CHANGE_LANG_ENG': 'Switch to English',
-        'BTN_CHANGE_LANG_FR': 'Changer en Fran\u00E7ais',
+        'BTN_CHANGE_LANG_ENG': 'English version',
+        'BTN_CHANGE_LANG_FR': 'Version fran\u00E7aise',
 
         'TITLE': 'Comparatif des FAI \u00E0 Montr\u00E9al',
 
