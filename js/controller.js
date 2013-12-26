@@ -1,5 +1,90 @@
-function PlanListCtrl($scope, $http) {
+var app = angular.module('myApp', ['pascalprecht.translate']);
+
+//Locales
+app.config(['$translateProvider', function ($translateProvider) {
+
+    $translateProvider.translations('en', {
+        'BTN_CHANGE_LANG_ENG': 'Switch to English',
+        'BTN_CHANGE_LANG_FR': 'Changer en Fran\u00E7ais',
+
+        'TITLE': 'Montreal ISP Comparison',
+
+        //Selection criterion bloc
+        'SELECTION_CRITERION': 'Selection criterion',
+        'MINIMUM_REQUIREMENTS': 'Minimum requirements',
+        'DOWNLOAD_SPEED': 'Download speed',
+        'BANDWIDTH': 'Bandwidth',
+        'BUDGET': 'Budget',
+        'MAXIMUM_MONTHLY_FEE': 'Maximum monthly fee',
+        'ORDER_BY': 'Order by',
+        'LOWEST_PRICE': 'Lowest price',
+        'HIGHEST_BANDWIDTH_LIMIT': 'Highest bandwidth limit',
+        'FASTEST_SPEED': 'Fastest speed',
+
+        //Titles column
+        'PLAN_NAME': 'Plan Name',
+        'DOWNLOAD': 'Download',
+        'UPLOAD': 'Upload',
+        'BANDWIDTH_LIMIT': 'Bandwidth Limit',
+        'MONTHLY_FEE': 'Monthly Fee',
+
+        'MORE_DETAILS': 'More details',
+        'NO_PLAN_FOUND': 'No plan found.',
+        'NO_PLAN_FOUND_TIP': 'Not all filters need to be filled',
+
+        'DOLLAR_MONTH' : '$/month',
+        'GB_MONTH' : 'GB/month',
+    });
+
+    $translateProvider.translations('fr', {
+        'BTN_CHANGE_LANG_ENG': 'Switch to English',
+        'BTN_CHANGE_LANG_FR': 'Changer en Fran\u00E7ais',
+
+        'TITLE': 'Comparatif des FAI \u00E0 Montr\u00E9al',
+
+        //Selection criterion bloc
+        'SELECTION_CRITERION': 'Crit\u00E8res de s\u00E9lection',
+        'MINIMUM_REQUIREMENTS': 'Exigences minimales',
+        'DOWNLOAD_SPEED': 'Vitesse de t\u00E9l\u00E9chargement',
+        'BANDWIDTH': 'Bande passante',
+        'BUDGET': 'Budget',
+        'MAXIMUM_MONTHLY_FEE': 'Tarif mensuel maximal',
+        'ORDER_BY': 'Tri\u00E9 par',
+        'LOWEST_PRICE': 'Prix le plus bas',
+        'HIGHEST_BANDWIDTH_LIMIT': 'Plus haute limite de bande passante',
+        'FASTEST_SPEED': 'Vitesse la plus rapide',
+
+        //Titles column
+        'PLAN_NAME': 'Nom du plan',
+        'DOWNLOAD': 'T\u00E9l\u00E9chargement',
+        'UPLOAD': 'T\u00E9l\u00E9versement',
+        'BANDWIDTH_LIMIT': 'Limite de bande passante',
+        'MONTHLY_FEE': 'Tarif mensuel',
+
+        'MORE_DETAILS': 'Plus de d\u00E9tails',
+        'NO_PLAN_FOUND': 'Aucun plan trouvé',
+        'NO_PLAN_FOUND_TIP': 'Il n\'est pas n\u00E9cessaire de remplir tous les filtres.',
+
+        'DOLLAR_MONTH' : '$/mois',
+        'GB_MONTH' : 'GB/mois',
+    });
+
+
+    var browserIsFrench = navigator.language.indexOf('fr') == 0;
+    $translateProvider.preferredLanguage(browserIsFrench ? 'fr' : 'en');
+
+}]);
+
+//Controller
+function PlanListCtrl($scope, $http, $translate) {
     $scope.plans = [];
+
+    $scope.isFrench = navigator.language.indexOf('fr') == 0;
+    
+    $scope.changeLanguage = function (newLang) {
+        $translate.uses(newLang);
+        $scope.isFrench = newLang == 'fr'
+    };
 
     //Create a plan from its properties
     $scope.addPlan = function (isp, name, downloadSpeed, uploadSpeed, bandwidthLimit, price, link) {

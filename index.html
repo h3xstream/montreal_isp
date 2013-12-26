@@ -1,5 +1,5 @@
 <!doctype html>
-<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="">
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="myApp">
 <head>
 	<title>Montreal ISP Comparison</title>
 	
@@ -8,43 +8,52 @@
 
 	<!--[if lte IE 8]> <script src="js/json2.js"></script> <![endif]-->
 	<script src="js/angular.min.js"></script>
+    <script src="js/angular-translate.min.js"></script>
 	<script src="js/controller.js"></script>
 
 </head>
 <body ng-controller="PlanListCtrl">
- <center>
-  <h1>Montreal ISP Comparison</h1>
 
- 	<form name="criteria" novalidate>
+
+ <center>
+ 
+
+  <h1>{{ 'TITLE' | translate }}</h1>
+     <div ng-switch on="isFrench">
+     <button ng-switch-when='true' ng-click="changeLanguage('en')">{{ 'BTN_CHANGE_LANG_ENG' | translate }}</button>
+     <button ng-switch-when='false' ng-click="changeLanguage('fr')">{{ 'BTN_CHANGE_LANG_FR' | translate }}</button>
+     </div>
+
+     <form name="criteria" novalidate>
  	<fieldset>
-	 	<legend>Selection criterias</legend>
+	 	<legend>{{ 'SELECTION_CRITERION' | translate }}</legend>
 	 	
 	 	<center>
  	<table class="criteria">
 		<tr><td>
-	 		<b>Minimum requirements</b><br/>
-	 		Download speed (Mbps) : <input type="number" ng-model="min_down_speed" name="min_down_speed" min="0" max="100" value="0" integer /><br/>
-	 		Bandwidth (GB) : <input type="number" ng-model="min_download_limit" name="min_download_limit" min="0" max="100" value="0" integer />
+	 		<b>{{ 'MINIMUM_REQUIREMENTS' | translate }}</b><br/>
+            {{ 'DOWNLOAD_SPEED' | translate }} (Mbps) : <input type="number" ng-model="min_down_speed" name="min_down_speed" min="0" max="100" value="0" integer /><br/>
+            {{ 'BANDWIDTH' | translate }} (GB) : <input type="number" ng-model="min_download_limit" name="min_download_limit" min="0" max="100" value="0" integer />
 	 		
  		
  		</td>
  		<td>
  		
-	 		<b>Budget</b><br/>
-	 		Maximum monthly fee ($/month) : <input type="number" ng-model="montly_fee" name="montly_fee" min="0" max="200" integer /><br/>
+	 		<b>{{ 'BUDGET' | translate }}</b><br/>
+            {{ 'MAXIMUM_MONTHLY_FEE' | translate }} ({{ 'DOLLAR_MONTH' | translate }}) : <input type="number" ng-model="montly_fee" name="montly_fee" min="0" max="200" integer /><br/>
 	 		
  		</td>
  		<td>
-	 		<b>Order by:</b><br/>
+	 		<b>{{ 'ORDER_BY' | translate }}:</b><br/>
 	 		
 	 		<input type="radio" ng-model="sort" name="order_by" id="order_by_price" value="order_by_price" ng-click="predicate = ['i_price','down_speed','limit'];" ng-checked="true">
-	 		<label for="order_by_price">Lowest price</label><br/>
+	 		<label for="order_by_price">{{ 'LOWEST_PRICE' | translate }}</label><br/>
 	 		
 	      	<input type="radio" ng-model="sort" name="order_by" id="order_by_limit" value="order_by_limit" ng-click="predicate = ['limit','i_price','down_speed'];">
-	      	<label for="order_by_limit">Highest bandwidth limit</label><br/>
+	      	<label for="order_by_limit">{{ 'HIGHEST_BANDWIDTH_LIMIT' | translate }}</label><br/>
 	      	
 	      	<input type="radio" ng-model="sort" name="order_by" id="order_by_down_speed" value="order_by_down_speed" ng-click="predicate = ['down_speed','i_price','limit'];">
-	      	<label for="order_by_speed">Fastest speed</label><br/>
+	      	<label for="order_by_speed">{{ 'FASTEST_SPEED' | translate }}</label><br/>
 	 		
  		</td></tr>
  	</table>
@@ -52,14 +61,14 @@
  	</fieldset>
  	
  	</form>
-  
+  <br/>
   <table class='plans'>
   	<th></th>
-  	<th>Plan Name</th>
-  	<th>Download<br/><small>(Mbps)</small></th>
-  	<th>Upload<br/><small>(Mbps)</small></th>
-  	<th>Bandwidth limit<br/><small>(GB/month)</small></th>
-  	<th>Monthly fee<br/><small>($/month)</small></th>
+  	<th>{{ 'PLAN_NAME' | translate }}</th>
+  	<th>{{ 'DOWNLOAD' | translate }}<br/><small>(Mbps)</small></th>
+  	<th>{{ 'UPLOAD' | translate }}<br/><small>(Mbps)</small></th>
+  	<th>{{ 'BANDWIDTH_LIMIT' | translate }}<br/><small>({{ 'GB_MONTH' | translate }})</small></th>
+  	<th>{{ 'MONTHLY_FEE' | translate }}<br/><small>({{ 'DOLLAR_MONTH' | translate }})</small></th>
   	<th></th>
   	
     <tr ng-repeat="plan in plans | filter:criteriaMatch() | orderBy:predicate:true"  ng-class-odd="'tr_odd'">
@@ -69,19 +78,21 @@
       <td>{{plan.up_speed}}</td>
       <td>{{(plan.limit == null) && '&#8734;' || plan.limit}}</td>
       <td>{{plan.price}}</td>
-      <td><a href="{{plan.link}}" target="_blank">More details</a></td>
+      <td><a href="{{plan.link}}" target="_blank">{{ 'MORE_DETAILS' | translate }}</a></td>
     </tr>
     
-    <tr ng-hide="(plans | filter:criteriaMatch).length">
+    <tr ng-hide="(plans | filter:criteriaMatch()).length">
     	<td colspan="7">
-    		<h3>No plan found. :(<br/>Not all filters need to be filled</h3>
+    		<h3>{{ 'NO_PLAN_FOUND' | translate }} :(<br/>{{ 'NO_PLAN_FOUND_TIP' | translate }}</h3>
     	</td>
     </tr>
   </table>
   </center>
   
   <a href="https://github.com/h3xstream/montreal_isp"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
-  
+
+
+
   <!--
   Other resources:
   http://www.dslreports.com/gbu/
