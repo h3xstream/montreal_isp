@@ -32,10 +32,10 @@ app.config(['$translateProvider', function ($translateProvider) {
         'NO_PLAN_FOUND': 'No plan found.',
         'NO_PLAN_FOUND_TIP': 'Not all filters need to be filled',
 
-        'DOLLAR_MONTH' : '$/month',
-        'GB_MONTH' : 'GB/month',
+        'DOLLAR_MONTH': '$/month',
+        'GB_MONTH': 'GB/month',
 
-        'FOOTNOTES': 'This application was developped by Philippe Arteau using <a href="http://angularjs.org/">AngularJS</a>. '+
+        'FOOTNOTES': 'This application was developped by Philippe Arteau using <a href="http://angularjs.org/">AngularJS</a>. ' +
             'It is release under <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons</a>.',
     });
 
@@ -65,13 +65,13 @@ app.config(['$translateProvider', function ($translateProvider) {
         'MONTHLY_FEE': 'Tarif mensuel',
 
         'MORE_DETAILS': 'Plus de d\u00E9tails',
-        'NO_PLAN_FOUND': 'Aucun plan trouv\u00E9',
+        'NO_PLAN_FOUND': 'Aucun plan trouv\u00E9.',
         'NO_PLAN_FOUND_TIP': 'Il n\'est pas n\u00E9cessaire de remplir tous les filtres.',
 
-        'DOLLAR_MONTH' : '$/mois',
-        'GB_MONTH' : 'GB/mois',
+        'DOLLAR_MONTH': '$/mois',
+        'GB_MONTH': 'GB/mois',
 
-        'FOOTNOTES': 'Cette application a \u00E9t\u00E9 d\u00E9velopp\u00E9e par Philippe Arteau en utilisant <a href="http://angularjs.org/">AngularJS</a>. '+
+        'FOOTNOTES': 'Cette application a \u00E9t\u00E9 d\u00E9velopp\u00E9e par Philippe Arteau en utilisant <a href="http://angularjs.org/">AngularJS</a>. ' +
             'Elle est publi\u00E9e sous la license <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons</a>.',
     });
 
@@ -86,7 +86,7 @@ function PlanListCtrl($scope, $http, $translate) {
     $scope.plans = [];
 
     $scope.isFrench = navigator.language.indexOf('fr') == 0;
-    
+
     $scope.changeLanguage = function (newLang) {
         $translate.uses(newLang);
         $scope.isFrench = newLang == 'fr'
