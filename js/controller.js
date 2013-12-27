@@ -1,5 +1,7 @@
 var app = angular.module('myApp', ['pascalprecht.translate']);
 
+var navLang = navigator.language ? navigator.language : 'fr'; //Some browser have null language ?!!
+
 //Locales
 app.config(['$translateProvider', function ($translateProvider) {
 
@@ -37,7 +39,7 @@ app.config(['$translateProvider', function ($translateProvider) {
 
         'SHARE_MSG': 'Share this tool',
         'FOOTNOTES': 'This application was developped by Philippe Arteau using <a href="http://angularjs.org/">AngularJS</a>. ' +
-            'It is release under <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons</a>.',
+            'It is release under <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons</a>.'
     });
 
     $translateProvider.translations('fr', {
@@ -74,11 +76,11 @@ app.config(['$translateProvider', function ($translateProvider) {
 
         'SHARE_MSG': 'Partagez cet outil',
         'FOOTNOTES': 'Cette application a \u00E9t\u00E9 d\u00E9velopp\u00E9e par Philippe Arteau en utilisant <a href="http://angularjs.org/">AngularJS</a>. ' +
-            'Elle est publi\u00E9e sous la license <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons</a>.',
+            'Elle est publi\u00E9e sous la license <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons</a>.'
     });
 
 
-    var browserIsFrench = navigator.language.indexOf('fr') == 0;
+    var browserIsFrench = navLang.indexOf('fr') == 0;
     $translateProvider.preferredLanguage(browserIsFrench ? 'fr' : 'en');
 
 }]);
@@ -87,11 +89,11 @@ app.config(['$translateProvider', function ($translateProvider) {
 function PlanListCtrl($scope, $http, $translate) {
     $scope.plans = [];
 
-    $scope.isFrench = navigator.language.indexOf('fr') == 0;
+    $scope.isFrench = navLang.indexOf('fr') == 0;
 
     $scope.changeLanguage = function (newLang) {
         $translate.uses(newLang);
-        $scope.isFrench = newLang == 'fr'
+        $scope.isFrench = newLang == 'fr'; //This trigger the language button to switch
     };
 
     //Create a plan from its properties
