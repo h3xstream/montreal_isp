@@ -21,6 +21,12 @@
 </div>
 </div>
 
+<noscript>
+<div style="height: 100%; width: 100%;top: 0; position:absolute; left: 0; border: 0; z-index:200;background:#FFFFFF;color:red;">
+<center><h2>Javascript est n&eacute;cessaire. / Javascript is required.</h2></center>
+</div>
+</noscript>
+
  <center>
 
   <h1>{{ 'TITLE' | translate }}</h1>
@@ -36,8 +42,8 @@
  	<table class="criteria">
 		<tr><td>
 	 		<b>{{ 'MINIMUM_REQUIREMENTS' | translate }}</b><br/>
-            {{ 'DOWNLOAD_SPEED' | translate }} (Mbps) : <input type="number" ng-model="min_down_speed" name="min_down_speed" min="0" max="100" value="0" integer /><br/>
-            {{ 'BANDWIDTH' | translate }} (GB) : <input type="number" ng-model="min_download_limit" name="min_download_limit" min="0" max="100" value="0" integer />
+            {{ 'DOWNLOAD_SPEED' | translate }} (Mbps) : <input type="number" size="6" ng-model="min_down_speed" name="min_down_speed" min="0" max="100" value="0" integer /><br/>
+            {{ 'BANDWIDTH' | translate }} (GB) : <input type="number" size="6" ng-model="min_download_limit" name="min_download_limit" min="0" max="100" value="0" integer />
 	 		
  		
  		</td>
@@ -45,7 +51,7 @@
  		<td>
  		
 	 		<b>{{ 'BUDGET' | translate }}</b><br/>
-            {{ 'MAXIMUM_MONTHLY_FEE' | translate }} ({{ 'DOLLAR_MONTH' | translate }}) : <input type="number" ng-model="montly_fee" name="montly_fee" min="0" max="200" integer /><br/>
+            {{ 'MAXIMUM_MONTHLY_FEE' | translate }} ({{ 'DOLLAR_MONTH' | translate }}) : <input type="number" size="6" ng-model="montly_fee" name="montly_fee" min="0" max="200" integer /><br/>
 	 		
  		</td>
         <td></td>
@@ -115,6 +121,7 @@
     <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a><br/>
     <div class="g-plusone"></div><br/>
     <div class="fb-like" data-href="http://h3xstream.github.io/montreal_isp/" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="lucida grande"></div><br/>
+    <script type="text/javascript" src="http://www.reddit.com/static/button/button1.js"></script>
     </div>
 </div>
 
