@@ -125,5 +125,53 @@
   ["Comwave","Illimit\u00E9 6" , 6 , 0.8 , null , 40, "http://www.comwave.net/residential-internet-6/"],
   ["Comwave","Illimit\u00E9 15", 15 , 1 , null , 45, "http://www.comwave.net/residential-internet-15/"],
   ["Comwave","Illimit\u00E9 25", 25 , 2 , null , 50, "http://www.comwave.net/residential-internet-25/"],
-  ["Comwave","Illimit\u00E9 50", 50 , 4 , null , 60, "http://www.comwave.net/residential-internet-50/"]
+  ["Comwave","Illimit\u00E9 50", 50 , 4 , null , 60, "http://www.comwave.net/residential-internet-50/"],
+
+  ["Velcom","Residential DSL 6.0", 6 , 0.8 , 100 , 26.95, "http://www.velcom.ca/moreinfolegacy.htm"],
+  ["Velcom","Residential DSL 6.0", 6 , 0.8 , null, 29.95, "http://www.velcom.ca/moreinfolegacy.htm"],
+  ["Velcom","Residential DSL 7.0", 7 , 1   , null, 26.95, "http://www.velcom.ca/moreinfoqdsl7.htm"],
+  ["Velcom","Residential DSL 7.0", 7 , 1   , null, 31.95, "http://www.velcom.ca/moreinfoqdsl7.htm"],
+  ["Velcom","Residential DSL 10.0", 10 , 1 , null, 40.95, "http://www.velcom.ca/moreinfoqdsl10.htm"],
+  ["Velcom","Residential DSL 15.0", 15 , 1 , null, 42.95, "http://www.velcom.ca/moreinfoqdsl15.htm"],
+  ["Velcom","Residential DSL 25.0", 25 , 10, null, 47.95, "http://www.velcom.ca/moreinfoqdsl25.htm"],
+  ["Velcom","Residential DSL 50.0", 50 , 10, null, 56.95, "http://www.velcom.ca/moreinfoqdsl50.htm"],
+  ["Velcom","Cable 5.0",   5 , 1, 300 , 24.95, "http://www.velcom.ca/moreinfoqcable5.htm"],
+  ["Velcom","Cable 8.0",   8 , 1, 300 , 39.95, "http://www.velcom.ca/moreinfoqcable8.htm"],
+  ["Velcom","Cable 20.0", 20 , 2, 300 , 50.95, "http://www.velcom.ca/moreinfoqcable20.htm"],
+  ["Velcom","Cable 30.0", 30 , 3, 300 , 59.95, "http://www.velcom.ca/moreinfoqcable30.htm"],
+
+    ["Gemstelecom","Internet Haute Vitesse illimit\u00E9 par c\u00E2ble 10", 10 , 1.5, null , 49.99, "http://fr.gemstelecom.com/internet/residential"],
+    ["Gemstelecom","Internet de Base par c\u00E2ble 5"                     , 5 ,  1  , null , 34.99, "http://fr.gemstelecom.com/internet/residential"],
+    ["Gemstelecom","Internet Haute Vitesse Plus par c\u00E2ble"            , 10 , 1.5, null , 39.99, "http://fr.gemstelecom.com/internet/residential"],
+    ["Gemstelecom","Internet de Base par c\u00E2ble 5"                     , 5  , 1  , 75   , 24.99, "http://fr.gemstelecom.com/internet/residential"],
+    ["Gemstelecom","Internet Haute Vitesse par c\u00E2ble"                 , 10 , 1.5, 100  , 39.99, "http://fr.gemstelecom.com/internet/residential"],
+    ["Gemstelecom","Super Haute vitesse illimit\u00E9 par c\u00E2ble 15"   , 15 , 10 , null , 49.99, "http://fr.gemstelecom.com/internet/residential"],
+
+    ["Gemstelecom","Haute Vitesse Extr\u00EAme Plus par c\u00E2ble 20"          , 20 , 10 , 150  , 39.99, "http://fr.gemstelecom.com/internet/residential"],
+    ["Gemstelecom","Haute Vitesse Extr\u00EAme Illimit\u00E9 par c\u00E2ble 20" , 20 , 10 , 500  , 49.99, "http://fr.gemstelecom.com/internet/residential"],
+    ["Gemstelecom","Haute Vitesse Extr\u00EAme Plus par c\u00E2ble 30"       , 30 , 10 , 500  , 59.99, "http://fr.gemstelecom.com/internet/residential"],
+    ["Gemstelecom","Haute Vitesse Extr\u00EAme Illimit\u00E9 par c\u00E2ble 30" , 30 , 10 , null , 79.99, "http://fr.gemstelecom.com/internet/residential"],
+
+    ["Gemstelecom","Haute Vitesse Ultime Plus par c\u00E2ble 60"     , 60 , 10 , 500  , 74.99, "http://fr.gemstelecom.com/internet/residential"],
+    ["Gemstelecom","Haute vitesse Extr\u00EAme par c\u00E2ble 60"    , 60 , 10 , null , 129.99,"http://fr.gemstelecom.com/internet/residential"],
+    ["Gemstelecom","Haute Vitesse Ultime par c\u00E2ble 120"         , 120 , 20 , 500 , 129.99,"http://fr.gemstelecom.com/internet/residential"],
+    ["Gemstelecom","Haute Vitesse Platine par c\u00E2ble 200"        , 200 , 30 , 500 , 179.99,"http://fr.gemstelecom.com/internet/residential"],
+
+    ["VIF","ADSL Yearly"                , 6 , 0.800 , null , 29.95, "http://wiki.vif.com/doku.php?id=en:resadsl"],
+    ["VIF","Cable Internet 5"           , 5 , 0.800 , 100  , 26.95, "http://wiki.vif.com/doku.php?id=en:cable"],
+    ["VIF","Cable Internet 5 unlimited" , 5 , 0.800 , null , 39.95, "http://wiki.vif.com/doku.php?id=en:cable"],
+    ["VIF","Cable Internet 8"           , 8 , 1     , 100  , 34.95, "http://wiki.vif.com/doku.php?id=en:cable"],
+    ["VIF","Cable Internet 8 unlimited" , 8 , 1     , null , 49.95, "http://wiki.vif.com/doku.php?id=en:cable"],
+
+    ["Falcon","High Speed DSL Falcon 7"     , 7  , 1  , 300 , 39.99, "http://www.falconnet.ca/internet/residential-dsl/"],
+    ["Falcon","High Speed DSL Falcon 10"    , 10 , 1  , 300 , 46.99, "http://www.falconnet.ca/internet/residential-dsl/"],
+    ["Falcon","High Speed DSL Falcon 15"    , 15 , 1  , 300 , 47.99, "http://www.falconnet.ca/internet/residential-dsl/"],
+    ["Falcon","High Speed DSL Falcon 15/10" , 15 , 10 , 300 , 49.99, "http://www.falconnet.ca/internet/residential-dsl/"],
+    ["Falcon","High Speed DSL Falcon 25"    , 25 , 10 , 300 , 52.99, "http://www.falconnet.ca/internet/residential-dsl/"],
+    ["Falcon","High Speed DSL Falcon 50"    , 50 , 10 , 300 , 69.99, "http://www.falconnet.ca/internet/residential-dsl/"],
+    ["Falcon","Basic Cable"           , 3 , 0.8 , 300 , 34.99, "http://www.falconnet.ca/services/residential-cable-internet/"],
+    ["Falcon","High Speed Cable"      , 8 ,  1  , 300 , 36   , "http://www.falconnet.ca/services/residential-cable-internet/"],
+    ["Falcon","High Speed Pro Cable"  , 15 , 1  , 300 , 54.99, "http://www.falconnet.ca/services/residential-cable-internet/"],
+    ["Falcon","Ultimate Cable"        , 30 , 2  , 300 , 70.99, "http://www.falconnet.ca/services/residential-cable-internet/"]
+
 ]
