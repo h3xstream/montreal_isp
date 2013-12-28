@@ -129,7 +129,7 @@
 
     ["Velcom","Residential DSL 6.0", 6 , 0.8 , 100 , 26.95, "http://www.velcom.ca/moreinfolegacy.htm"],
     ["Velcom","Residential DSL 6.0", 6 , 0.8 , null, 29.95, "http://www.velcom.ca/moreinfolegacy.htm"],
-    ["Velcom","Residential DSL 7.0", 7 , 1   , null, 26.95, "http://www.velcom.ca/moreinfoqdsl7.htm"],
+    ["Velcom","Residential DSL 7.0", 7 , 1   , 100 , 26.95, "http://www.velcom.ca/moreinfoqdsl7.htm"],
     ["Velcom","Residential DSL 7.0", 7 , 1   , null, 31.95, "http://www.velcom.ca/moreinfoqdsl7.htm"],
     ["Velcom","Residential DSL 10.0", 10 , 1 , null, 40.95, "http://www.velcom.ca/moreinfoqdsl10.htm"],
     ["Velcom","Residential DSL 15.0", 15 , 1 , null, 42.95, "http://www.velcom.ca/moreinfoqdsl15.htm"],
@@ -149,7 +149,7 @@
 
     ["Gemstelecom","Haute Vitesse Extr\u00EAme Plus par c\u00E2ble 20"          , 20 , 10 , 150  , 39.99, "http://fr.gemstelecom.com/internet/residential"],
     ["Gemstelecom","Haute Vitesse Extr\u00EAme Illimit\u00E9 par c\u00E2ble 20" , 20 , 10 , 500  , 49.99, "http://fr.gemstelecom.com/internet/residential"],
-    ["Gemstelecom","Haute Vitesse Extr\u00EAme Plus par c\u00E2ble 30"       , 30 , 10 , 500  , 59.99, "http://fr.gemstelecom.com/internet/residential"],
+    ["Gemstelecom","Haute Vitesse Extr\u00EAme Plus par c\u00E2ble 30"          , 30 , 10 , 500  , 59.99, "http://fr.gemstelecom.com/internet/residential"],
     ["Gemstelecom","Haute Vitesse Extr\u00EAme Illimit\u00E9 par c\u00E2ble 30" , 30 , 10 , null , 79.99, "http://fr.gemstelecom.com/internet/residential"],
 
     ["Gemstelecom","Haute Vitesse Ultime Plus par c\u00E2ble 60"     , 60 , 10 , 500  , 74.99, "http://fr.gemstelecom.com/internet/residential"],
