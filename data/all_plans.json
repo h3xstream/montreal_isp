@@ -42,7 +42,6 @@
     ["TekSavvy","Cable 60"   , 60 , 10  , 400  , 72.95, "http://teksavvy.com/fr/residential/internet/cable/cable-60-2"],
     ["TekSavvy","Cable 60"   , 60 , 10  , null , 89.95, "http://teksavvy.com/fr/residential/internet/cable/cable-60-2"],
 
-    ["RadioActif","Internet 56K Commut\u00E9"  , 0.056  , 0.056 , null, 8.95,  "http://www.radioactif.com/forfaits_internet/forfaits-internet-avantages_DU.php"],
     ["RadioActif","ADSL 2"  , 2  , 0.8 , null, 28.5,  "http://www.radioactif.com/forfaits_internet/forfaits-internet-avantages_ADSL.php"],
     ["RadioActif","ADSL 6"  , 6  , 0.8 , null, 32.95, "http://www.radioactif.com/forfaits_internet/forfaits-internet-avantages_ADSL_6.php"],
     ["RadioActif","ADSL 10" , 10 , 1   , null, 49.95, "http://www.radioactif.com/forfaits_internet/forfaits-internet-avantages_ADSL_10.php"],
