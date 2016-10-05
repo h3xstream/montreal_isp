@@ -71,10 +71,11 @@
 
                 <td>
 <b>{{ 'SERVICE_TYPE' | translate }}</b><br/>
-<label><input type="checkbox" ng-model="cable" name="cable">Cable</label><br/>
-<label><input type="checkbox" ng-model="dsl" name="dsl">DSL</label><br/>
-<label><input type="checkbox" ng-model="fiber" name="fiber">{{ 'FIBER' | translate }}</label><br/>
-<label><input type="checkbox" ng-model="other" name="other">{{ 'OTHER' | translate }}</label><br/>
+<label><input type="radio" ng-model="service_type" name="service_type" id="service_any" value="any" checked>{{ 'ANY' | translate }}</label><br/>
+<label><input type="radio" ng-model="service_type" name="service_type" id="service_cable" value="cable">Cable</label><br/>
+<label><input type="radio" ng-model="service_type" name="service_type" id="service_dsl" value="dsl">DSL</label><br/>
+<label><input type="radio" ng-model="service_type" name="service_type" id="service_fiber" value="fiber">{{ 'FIBER' | translate }}</label><br/>
+<label><input type="radio" ng-model="service_type" name="service_type" id="service_other" value="other">{{ 'OTHER' | translate }}</label><br/>
 
                 </td>
                 </tr>
