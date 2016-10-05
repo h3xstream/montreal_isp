@@ -4,7 +4,7 @@ body, td, th {
 }
 
 body {
-	height: 100%;
+    height: 100%;
     margin: 0px;
     padding: 0px;
 }
@@ -15,8 +15,8 @@ h1, h3 {
 }
 
 .criterion {
-    padding-left: 150px;
-    padding-right: 150px;
+    max-width: 70em;
+    padding: 0 auto;
 }
 
 table {
