@@ -1,15 +1,15 @@
 <!doctype html>
 <html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="myApp">
 <head>
-	<title>Comparatif des FAI &agrave; Montr&eacute;al / Montreal ISP Comparison</title>
-	
-	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
+        <title>Comparatif des FAI &agrave; Montr&eacute;al / Montreal ISP Comparison</title>
 
-	<!--[if lte IE 8]> <script src="js/json2.js"></script> <![endif]-->
-	<script src="js/angular.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+        <!--[if lte IE 8]> <script src="js/json2.js"></script> <![endif]-->
+        <script src="js/angular.min.js"></script>
     <script src="js/angular-translate.min.js"></script>
-	<script src="js/controller.js"></script>
+        <script src="js/controller.js"></script>
 
 </head>
 <body ng-controller="PlanListCtrl">
@@ -35,55 +35,65 @@
 
      <form name="criteria" novalidate>
          <div class="criterion">
- 	<fieldset>
-	 	<legend>{{ 'SELECTION_CRITERION' | translate }}</legend>
-	 	
-	 	<center>
- 	<table class="criteria">
-		<tr><td>
-	 		<b>{{ 'MINIMUM_REQUIREMENTS' | translate }}</b><br/>
+        <fieldset>
+                <legend>{{ 'SELECTION_CRITERION' | translate }}</legend>
+
+                <center>
+        <table class="criteria">
+                <tr><td>
+                        <b>{{ 'MINIMUM_REQUIREMENTS' | translate }}</b><br/>
             {{ 'DOWNLOAD_SPEED' | translate }} (Mbps) : <input type="number" size="6" ng-model="min_down_speed" name="min_down_speed" min="0" max="100" value="0" integer /><br/>
             {{ 'BANDWIDTH' | translate }} (GB) : <input type="number" size="6" ng-model="min_download_limit" name="min_download_limit" min="0" max="100" value="0" integer />
-	 		
- 		
- 		</td>
+
+
+                </td>
         <td></td>
- 		<td>
- 		
-	 		<b>{{ 'BUDGET' | translate }}</b><br/>
+                <td>
+
+                        <b>{{ 'BUDGET' | translate }}</b><br/>
             {{ 'MAXIMUM_MONTHLY_FEE' | translate }} ({{ 'DOLLAR_MONTH' | translate }}) : <input type="number" size="6" ng-model="montly_fee" name="montly_fee" min="0" max="200" integer /><br/>
-	 		
- 		</td>
+
+                </td>
         <td></td>
- 		<td>
-	 		<b>{{ 'ORDER_BY' | translate }}</b><br/>
-	 		
-	 		<input type="radio" ng-model="sort" name="order_by" id="order_by_price" value="order_by_price" ng-click="predicate = ['i_price','down_speed','limit'];" ng-checked="true">
-	 		<label for="order_by_price">{{ 'LOWEST_PRICE' | translate }}</label><br/>
-	 		
-	      	<input type="radio" ng-model="sort" name="order_by" id="order_by_limit" value="order_by_limit" ng-click="predicate = ['limit','i_price','down_speed'];">
-	      	<label for="order_by_limit">{{ 'HIGHEST_BANDWIDTH_LIMIT' | translate }}</label><br/>
-	      	
-	      	<input type="radio" ng-model="sort" name="order_by" id="order_by_down_speed" value="order_by_down_speed" ng-click="predicate = ['down_speed','i_price','limit'];">
-	      	<label for="order_by_speed">{{ 'FASTEST_SPEED' | translate }}</label><br/>
-	 		
- 		</td></tr>
- 	</table>
- 	</center>
- 	</fieldset>
+                <td>
+                        <b>{{ 'ORDER_BY' | translate }}</b><br/>
+
+                        <input type="radio" ng-model="sort" name="order_by" id="order_by_price" value="order_by_price" ng-click="predicate = ['i_price','down_speed','limit'];" ng-checked="true">
+                        <label for="order_by_price">{{ 'LOWEST_PRICE' | translate }}</label><br/>
+
+                <input type="radio" ng-model="sort" name="order_by" id="order_by_limit" value="order_by_limit" ng-click="predicate = ['limit','i_price','down_speed'];">
+                <label for="order_by_limit">{{ 'HIGHEST_BANDWIDTH_LIMIT' | translate }}</label><br/>
+
+                <input type="radio" ng-model="sort" name="order_by" id="order_by_down_speed" value="order_by_down_speed" ng-click="predicate = ['down_speed','i_price','limit'];">
+                <label for="order_by_speed">{{ 'FASTEST_SPEED' | translate }}</label><br/>
+
+                </td>
+
+                <td>
+<b>{{ 'SERVICE_TYPE' | translate }}</b><br/>
+<label><input type="checkbox" ng-model="cable" name="cable">Cable</label><br/>
+<label><input type="checkbox" ng-model="dsl" name="dsl">DSL</label><br/>
+<label><input type="checkbox" ng-model="fiber" name="fiber">{{ 'FIBER' | translate }}</label><br/>
+<label><input type="checkbox" ng-model="other" name="other">{{ 'OTHER' | translate }}</label><br/>
+
+                </td>
+                </tr>
+        </table>
+        </center>
+        </fieldset>
              </div>
- 	
- 	</form>
+
+        </form>
   <br/>
   <table class='plans'>
-  	<th></th>
-  	<th>{{ 'PLAN_NAME' | translate }}</th>
-  	<th>{{ 'DOWNLOAD' | translate }}<br/><small>(Mbps)</small></th>
-  	<th>{{ 'UPLOAD' | translate }}<br/><small>(Mbps)</small></th>
-  	<th>{{ 'BANDWIDTH_LIMIT' | translate }}<br/><small>({{ 'GB_MONTH' | translate }})</small></th>
-  	<th>{{ 'MONTHLY_FEE' | translate }}<br/><small>({{ 'DOLLAR_MONTH' | translate }})</small></th>
-  	<th></th>
-  	
+        <th></th>
+        <th>{{ 'PLAN_NAME' | translate }}</th>
+        <th>{{ 'DOWNLOAD' | translate }}<br/><small>(Mbps)</small></th>
+        <th>{{ 'UPLOAD' | translate }}<br/><small>(Mbps)</small></th>
+        <th>{{ 'BANDWIDTH_LIMIT' | translate }}<br/><small>({{ 'GB_MONTH' | translate }})</small></th>
+        <th>{{ 'MONTHLY_FEE' | translate }}<br/><small>({{ 'DOLLAR_MONTH' | translate }})</small></th>
+        <th></th>
+
     <tr ng-repeat="plan in plans | filter:criteriaMatch() | orderBy:predicate:true"  ng-class-odd="'tr_odd'">
       <td><img src="{{plan.icon}}" height="16" width="16"/></td>
       <td style="text-align:left">{{plan.isp}} {{plan.name}}</td>
@@ -93,11 +103,11 @@
       <td>{{plan.price}}</td>
       <td><a href="{{plan.link}}" target="_blank">{{ 'MORE_DETAILS' | translate }}</a></td>
     </tr>
-    
+
     <tr ng-hide="(plans | filter:criteriaMatch()).length">
-    	<td colspan="7">
-    		<h3>{{ 'NO_PLAN_FOUND' | translate }} :(<br/>{{ 'NO_PLAN_FOUND_TIP' | translate }}</h3>
-    	</td>
+        <td colspan="7">
+                <h3>{{ 'NO_PLAN_FOUND' | translate }} :(<br/>{{ 'NO_PLAN_FOUND_TIP' | translate }}</h3>
+        </td>
     </tr>
   </table>
 

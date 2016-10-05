@@ -22,6 +22,9 @@ app.config(['$translateProvider', function ($translateProvider) {
         'LOWEST_PRICE': 'Lowest price',
         'HIGHEST_BANDWIDTH_LIMIT': 'Highest bandwidth limit',
         'FASTEST_SPEED': 'Fastest speed',
+        'SERVICE_TYPE': 'Service type',
+        'FIBER': 'Fiber',
+        'OTHER': 'Other',
 
         //Titles column
         'PLAN_NAME': 'Plan Name',
@@ -59,6 +62,9 @@ app.config(['$translateProvider', function ($translateProvider) {
         'LOWEST_PRICE': 'Prix le plus bas',
         'HIGHEST_BANDWIDTH_LIMIT': 'Plus haute limite de bande passante',
         'FASTEST_SPEED': 'Vitesse la plus rapide',
+        'SERVICE_TYPE': 'Type de service',
+        'FIBER': 'Fibre',
+        'OTHER': 'Autres',
 
         //Titles column
         'PLAN_NAME': 'Nom du forfait',
@@ -127,6 +133,10 @@ function PlanListCtrl($scope, $http, $translate) {
     $scope.criteriaMatch = function () {
         return function (item) {
             return (
+                (!document.criteria.cable.checked || item.name.toLowerCase().indexOf('cable') !== -1 || item.name.toLowerCase().indexOf('câble') !== -1) &&
+                (!document.criteria.fiber.checked  || item.name.toLowerCase().indexOf('fiber') !== -1 || item.name.toLowerCase().indexOf('fibre') !== -1 || item.name.toLowerCase().indexOf('fibe') !== -1 || item.name.toLowerCase().indexOf('fttn') !== -1) &&
+                (!document.criteria.dsl.checked  || item.name.toLowerCase().indexOf('dsl') !== -1) &&
+                (!document.criteria.other.checked  || (item.name.toLowerCase().indexOf('fiber') === -1 && item.name.toLowerCase().indexOf('fibre') === -1 && item.name.toLowerCase().indexOf('fibe') === -1 && item.name.toLowerCase().indexOf('fttn') === -1 && item.name.toLowerCase().indexOf('câble') === -1 && item.name.toLowerCase().indexOf('cable') === -1 && item.name.toLowerCase().indexOf('dsl') === -1)) &&
                 item.down_speed >= document.criteria.min_down_speed.value
                     && (item.limit >= document.criteria.min_download_limit.value || item.limit === null)
                     && (item.price <= document.criteria.montly_fee.value || document.criteria.montly_fee.value == '')
